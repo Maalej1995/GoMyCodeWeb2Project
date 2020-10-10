@@ -1,28 +1,30 @@
 import React from 'react';
-import { Link, Route, Switch } from 'react-router-dom'
-import Home from './Components/Home.jsx'
-// import Category from './Components/Category.jsx'
-// import Login from './Components/Login.jsx'
-// import Products from './Components/Products.jsx'
+import { Nav, Navbar } from 'react-bootstrap'
+import { Route, Switch } from 'react-router-dom'
+import Home from './Components/Home'
+import Category from './Components/Category'
+import Products from './Components/Products'
+import AboutUs from './Components/AboutUs'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
+      <Navbar bg="dark" variant="dark">
+        <Navbar.Brand href="/">Web2Project</Navbar.Brand>
+        <Nav className="mr-auto">
+          <Nav.Link href="/">Home</Nav.Link>
+          <Nav.Link href="/Category">Category</Nav.Link>
+          <Nav.Link href="/Products">Products</Nav.Link>
+          <Nav.Link href="/AboutUs">About Us</Nav.Link>
+        </Nav>
+      </Navbar>
       <header className="App-header">
-        <nav className="navbar navbar-light">
-          <ul className="nav navbar-nav">
-            <li><Link to="/">Home</Link></li>
-            {/* <li><Link to="/category">Category</Link></li>
-            <li><Link to="/products">Products</Link></li>
-            <li><Link to="/login">Login</Link></li> */}
-          </ul>
-        </nav>
         <Switch>
           <Route exact path="/" component={Home} />
-          {/* <Route path="/category" component={Category} />
-          <Route path="/login" component={Login} />
-          <Route path="/products" component={Products} /> */}
+          <Route path="/Category" component={Category} />
+          <Route path="/Products" component={Products} />
+          <Route path="/AboutUs" component={AboutUs} />
         </Switch>
       </header>
     </div >
