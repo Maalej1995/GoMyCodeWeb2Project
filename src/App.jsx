@@ -1,24 +1,31 @@
 import React from 'react';
+import { Link, Route, Switch } from 'react-router-dom'
+import Home from './Components/Home.jsx'
+// import Category from './Components/Category.jsx'
+// import Login from './Components/Login.jsx'
+// import Products from './Components/Products.jsx'
 import './App.css';
-import { Provider } from 'react-redux'
-import { BrowserRouter as Router } from 'react-router-dom'
-import importedStore from './redux/store'
-import PcList from './Components/pcList';
-import PcContainer from './Components/pcContainer';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Router>
-          <Provider store={importedStore}>
-            <PcContainer>
-              <PcList />
-            </PcContainer>
-          </Provider>
-        </Router>
+        <nav className="navbar navbar-light">
+          <ul className="nav navbar-nav">
+            <li><Link to="/">Home</Link></li>
+            {/* <li><Link to="/category">Category</Link></li>
+            <li><Link to="/products">Products</Link></li>
+            <li><Link to="/login">Login</Link></li> */}
+          </ul>
+        </nav>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          {/* <Route path="/category" component={Category} />
+          <Route path="/login" component={Login} />
+          <Route path="/products" component={Products} /> */}
+        </Switch>
       </header>
-    </div>
+    </div >
   );
 }
 
