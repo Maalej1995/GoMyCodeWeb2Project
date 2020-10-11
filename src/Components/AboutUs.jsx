@@ -3,7 +3,7 @@ import myPhoto from '../../src/Hatem MAALEJ.png'
 
 export default function AboutUs() {
     return (
-        <div style={{ display: 'flex', alignSelf: 'center' }}>
+        <div style={{ display: 'flex', alignSelf: 'center', textAlign: "left" }}>
             <img style={{ width: '10vw' }} src={myPhoto} alt="Hatem MAALEJ" />
             <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '70px', paddingLeft: '70px' }}>
                 <div>
@@ -14,6 +14,9 @@ export default function AboutUs() {
                 </div>
                 <div>
                     Engineer
+                </div>
+                <div>
+                    Developer
                 </div>
             </div>
         </div>
