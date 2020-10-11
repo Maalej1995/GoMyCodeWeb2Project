@@ -3,7 +3,6 @@ import { Nav, Navbar } from 'react-bootstrap'
 import { Route, Switch } from 'react-router-dom'
 import Home from './Components/Home'
 import Category from './Components/Category'
-import Products from './Components/Products'
 import AboutUs from './Components/AboutUs'
 import './App.css';
 
@@ -22,7 +21,6 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/Category" component={Category} />
-          {/* <Route path="/Category/GamingPc" component={Products} /> */}
           <Route path="/AboutUs" component={AboutUs} />
         </Switch>
       </header>

@@ -5,10 +5,14 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom';
+import importedStore from './redux/store'
+import { Provider } from 'react-redux'
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <Provider store={importedStore}>
+      <App />
+    </Provider>
   </BrowserRouter>,
   document.getElementById('root')
 );

@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import { Card, ListGroupItem, Button, Modal } from 'react-bootstrap';
 import { connect } from 'react-redux'
 
-function PcCard(props) {
-    const array = props.detailedPcListState.filter(pc => pc.id === props.pcStats.id)
+function ProductCard(props) {
+    const array = props.detailedProductsListState.filter(product => product.id === props.productStats.id)
     const [modalIsShown, setModalIsShown] = useState(false)
     return (
         <Card style={{ width: '20rem', height: 'auto', backgroundColor: 'transparent', margin: '20px', border: 'none' }}>
-            <Card.Img style={{ width: 'auto', height: '10vw', textAlign: 'bottom' }} variant="bottom" src={props.pcStats.imageSrc} />
-            <Card.Title style={{ backgroundColor: 'transparent', fontSize: '1.2vw', margin: "0", padding: ".75rem" }}>{props.pcStats.manufacturer} <br /> {props.pcStats.reference} </Card.Title>
-            <ListGroupItem style={{ backgroundColor: 'transparent', fontSize: '1vw' }} >Processor : {props.pcStats.processor}</ListGroupItem>
-            <ListGroupItem style={{ backgroundColor: 'transparent', fontSize: '1vw' }} >RAM : {props.pcStats.ram}</ListGroupItem>
-            <ListGroupItem style={{ backgroundColor: 'transparent', fontSize: '1vw' }} >Graphics : {props.pcStats.graphic}</ListGroupItem>
+            <Card.Img style={{ width: 'auto', height: '10vw', textAlign: 'bottom' }} variant="bottom" src={props.productStats.imageSrc} />
+            <Card.Title style={{ backgroundColor: 'transparent', fontSize: '1.2vw', margin: "0", padding: ".75rem" }}>{props.productStats.manufacturer} <br /> {props.productStats.reference} </Card.Title>
+            <ListGroupItem style={{ backgroundColor: 'transparent', fontSize: '1vw' }} >Processor : {props.productStats.processor}</ListGroupItem>
+            <ListGroupItem style={{ backgroundColor: 'transparent', fontSize: '1vw' }} >RAM : {props.productStats.ram}</ListGroupItem>
+            <ListGroupItem style={{ backgroundColor: 'transparent', fontSize: '1vw' }} >Graphics : {props.productStats.graphic}</ListGroupItem>
             <Button style={{ outline: 'none' }} variant="secondary" onClick={() => setModalIsShown(true)}>More Details</Button>{' '}
             <Button variant="primary" >Add To Basket</Button>{' '}
             <Modal show={modalIsShown} onHide={() => setModalIsShown(false)}>
@@ -38,9 +38,9 @@ function PcCard(props) {
 
 const mapStateToProps = (stateInStore) => {
     return ({
-        briefPcListState: stateInStore.briefPcList,
-        detailedPcListState: stateInStore.detailedPcList
+        briefProductsListState: stateInStore.briefProductsList,
+        detailedProductsListState: stateInStore.detailedProductsList
     })
 }
 
-export default connect(mapStateToProps)(PcCard)
+export default connect(mapStateToProps)(ProductCard)

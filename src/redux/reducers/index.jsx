@@ -1,9 +1,9 @@
-import { briefPcListReducer } from './briefPcList'
-import { detailedPcListReducer } from './detailedPcList'
+import { briefProductsListReducer } from './briefProductsList'
+import { detailedProductsListReducer } from './detailedProductsList'
 
 import { combineReducers } from 'redux'
 
 export const rootReducer = combineReducers({
-    briefPcList: briefPcListReducer,
-    detailedPcList: detailedPcListReducer
+    briefProductsList: briefProductsListReducer,
+    detailedProductsList: detailedProductsListReducer
 })
