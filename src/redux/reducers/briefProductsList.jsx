@@ -11,8 +11,6 @@ export const briefProductsList = [
 
 export const briefProductsListReducer = (state = briefProductsList, action) => {
     const updatedState = briefProductsList
-    console.log(updatedState);
-    console.log(updatedState.filter(product => product.productType === action.type));
     switch (action.type) {
         case "PC":
             return updatedState.filter(product => product.productType === action.type);

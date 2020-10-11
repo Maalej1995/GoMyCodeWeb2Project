@@ -18,7 +18,7 @@ function ProductCard(props) {
                 propsBriefArray.map(key => <ListGroupItem key={props.productStats[key]} style={{ backgroundColor: 'transparent', fontSize: '1vw' }}>{key.charAt(0).toUpperCase() + key.slice(1)} : {props.productStats[key]}</ListGroupItem>)
             }
             <Button style={{ outline: 'none' }} variant="secondary" onClick={() => setModalIsShown(true)}>More Details</Button>{' '}
-            <Button variant="primary" >Add To Basket</Button>{' '}
+            <Button variant="primary" onClick={() => props.dispatch({ type: "ADD", payload: props.productStats })}>Add To Basket</Button>{' '}
             <Modal show={modalIsShown} onHide={() => setModalIsShown(false)}>
                 <Modal.Header closeButton>
                     <Modal.Title>Pc Details</Modal.Title>
@@ -42,7 +42,8 @@ function ProductCard(props) {
 const mapStateToProps = (stateInStore) => {
     return ({
         briefProductsListState: stateInStore.briefProductsList,
-        detailedProductsListState: stateInStore.detailedProductsList
+        detailedProductsListState: stateInStore.detailedProductsList,
+        basketListState: stateInStore.basketList
     })
 }
 
