@@ -15,7 +15,6 @@ function App() {
         <Nav className="mr-auto">
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/Category">Category</Nav.Link>
-          <Nav.Link href="/Products">Products</Nav.Link>
           <Nav.Link href="/AboutUs">About Us</Nav.Link>
         </Nav>
       </Navbar>
@@ -23,7 +22,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/Category" component={Category} />
-          <Route path="/Products" component={Products} />
+          {/* <Route path="/Category/GamingPc" component={Products} /> */}
           <Route path="/AboutUs" component={AboutUs} />
         </Switch>
       </header>
